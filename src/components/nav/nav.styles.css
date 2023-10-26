@@ -1,0 +1,29 @@
+nav {
+  height: 44px;
+  background-color: rgba(22, 22, 23, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  font-size: 12px;
+}
+
+.nav-items-container {
+  display: flex;
+  align-items: center;
+  /* background-color: green; */
+  max-width: 1024px;
+  padding: 0 20px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.nav-items-container a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-items-container a svg {
+  display: flex;
+  align-items: center;
+  fill: rgba(255, 255, 255, 0.8);
+}
