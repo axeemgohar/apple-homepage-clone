@@ -5,7 +5,7 @@ import { ReactComponent as CartIcon } from "../../assets/cart-icon.svg";
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="header-nav">
       <div className="nav-items-container">
         <a href="/">
           <Logo />

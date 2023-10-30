@@ -1,6 +1,90 @@
 import "./footer.styles.css";
 
 const Footer = () => {
+  const shopAndLearnLinks = [
+    "Store",
+    "Mac",
+    "iPad",
+    "iPhone",
+    "Watch",
+    "Vision",
+    "Airpods",
+    "TV & Home",
+    "AirTag",
+    "Accessories",
+    "Gift Cards",
+  ];
+
+  const appleWalletLinks = ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"];
+
+  const accountLinks = [
+    "Manage Your Apple ID",
+    "Apple Store Account",
+    "iCould.com",
+  ];
+
+  const entertainmentLinks = [
+    "Apple 1",
+    "Apple TV+",
+    "Apple Music",
+    "Apple Arcade",
+    "Apple Fitness+",
+    "Apple News+",
+    "Apple Podcasts",
+    "Apple Books",
+    "App Store",
+  ];
+  const appleStoreLinks = [
+    "Find a Store",
+    "Genius Bar",
+    "Today at Apple",
+    "Apple Clamp",
+    "Apple Store App",
+    "Certified Refurbished",
+    "Apple Trade In",
+    "Financing",
+    "Carrier Deals at Apple",
+    "Order Status",
+    "Shopping Help",
+  ];
+
+  const forBusinessLinks = ["Apple and Business", "Shop for Business"];
+
+  const forEducationLinks = [
+    "Apple and Education",
+    "Shop for K-12",
+    "Shop for College",
+  ];
+
+  const forHealthCareLinks = [
+    "Apple in HealthCare",
+    "Health on Apple Watch",
+    "Health Records on iPhone",
+  ];
+
+  const forGovermentLinks = [
+    "Shop for Government",
+    "Shop for Veterans and Military",
+  ];
+
+  const appleValues = [
+    "Accessibility",
+    "Education",
+    "Environment",
+    "Inclusion and Diversity",
+    "Privacy",
+    "Racial Equity and Justice",
+    "Supplier Responsibility",
+  ];
+  const aboutAppleLinks = [
+    "Newsroom",
+    "Apple Leadership",
+    "Career Opportunities",
+    "Investors",
+    "Ethics & Compliance",
+    "Events",
+    "Contact Apple",
+  ];
   return (
     <footer>
       <div className="footer-container">
@@ -54,6 +138,105 @@ const Footer = () => {
             .
           </p>
           <p>A subscription is required for Apple TV+.</p>
+        </section>
+        <section className="footer-nav-container">
+          <nav className="footer-nav-links">
+            <div className="footer-nav-column">
+              <div className="footer-nav-items">
+                <h4>Shop and Learn</h4>
+                {shopAndLearnLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>Apple Wallet</h4>
+                {appleWalletLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+            </div>
+            <div className="footer-nav-column">
+              <div className="footer-nav-items">
+                <h4>Account</h4>
+                {accountLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>Entertainment</h4>
+                {entertainmentLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+            </div>
+            <div className="footer-nav-column">
+              <div className="footer-nav-items">
+                <h4>Apple Store</h4>
+                {appleStoreLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+            </div>
+            <div className="footer-nav-column">
+              <div className="footer-nav-items">
+                <h4>For Business</h4>
+                {forBusinessLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>For Education</h4>
+                {forEducationLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>For Healthcare</h4>
+                {forHealthCareLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>For Government</h4>
+                {forGovermentLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+            </div>
+            <div className="footer-nav-column">
+              <div className="footer-nav-items">
+                <h4>Apple Values</h4>
+                {appleValues.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+              <div className="footer-nav-items">
+                <h4>About Apple</h4>
+                {aboutAppleLinks.map((link) => {
+                  return <a href="/">{link}</a>;
+                })}
+              </div>
+            </div>
+          </nav>
+          <p className="waysToShop">
+            More ways to shop: <a href="/">Find an Apple Store</a> or{" "}
+            <a href="/">other retailer</a> near you. Or call 1-800-MY-APPLE.
+          </p>
+        </section>
+        <section className="copyright">
+          <div className="select-country">
+            <p>United States</p>
+          </div>
+          <div className="copyright-container">
+            <p>Copyright © 2023 Apple Inc. All rights reserved.</p>
+            <div className="legal-links">
+              <a href="/">Privacy Policy</a>
+              <a href="/">Terms of Use</a>
+              <a href="/">Sales and Refunds</a>
+              <a href="/">Legal</a>
+              <a href="/">Site Map</a>
+            </div>
+          </div>
         </section>
       </div>
     </footer>
