@@ -6,6 +6,8 @@
   justify-content: center;
   margin-bottom: 15px;
   width: 49%;
+  height: 580px;
+  background-size: cover;
 }
 
 .promo-card-content-container {
@@ -22,6 +24,7 @@
 .promo-card-content-container p {
   font-family: SFPro-Regular;
   font-size: 21px;
+  margin-top: 4px;
 }
 
 .promo-card-links-container {
@@ -33,7 +36,6 @@
   font-size: 17px;
   text-decoration: none;
   color: #2997ff;
-  -weight: 400;
 }
 
 .promo-card-links-container a:first-child {
@@ -49,58 +51,43 @@
 /* Promo-1 Styles */
 
 .promo-one-container {
-  background-image: url(../../assets/ipad.jpg);
-  height: 580px;
+  background-image: url(../../assets/promos/imac-large-2x.jpg);
 }
 
-/* Promo-2 Styles */
-
-.promo-two-container {
-  background-image: url(../../assets/visionpro.jpg);
-  height: 580px;
-  align-items: end;
-}
-
-.promo-two-content {
-  margin-top: 0;
-  margin-bottom: 54px;
-}
-
-.promo-two-content h3 {
-  background-image: url(../../assets/visionprologo.png);
-  height: 41px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.promo-two-content p::after {
-  content: "Available early next year in the U.S.";
+.promo-one-content p::after {
+  content: "Available starting 11.7";
   display: block;
   font-size: 17px;
   color: #6e6e73;
   margin-top: 12px;
 }
 
-.promo-two-links a:last-child {
-  display: none;
+/* Promo-2 Styles */
+
+.promo-two-container {
+  background-image: url(../../assets/promos/apple-watch-large-2x.jpg);
 }
 
-.promo-two-links a:first-child {
-  margin: 0;
+.promo-two-content {
+  color: #f5f5f7;
 }
-
+.promo-two-content h3 {
+  background-image: url(../../assets/logos/apple-watch-logo-large-2x.png);
+  height: 53px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 9px;
+}
 /* Promo-3 Styles */
-
 .promo-three-container {
-  background-image: url(../../assets/macbook15.jpg);
-  height: 580px;
+  background-image: url(../../assets/promos/ipad.jpg);
 }
 
 /* Promo-4 Styles */
 
 .promo-four-container {
-  background-image: url(../../assets/airpodspro.jpg);
-  height: 580px;
+  background-image: url(../../assets/promos/airpods-pro-large-2x.jpg);
 }
 
 .promo-four-content {
@@ -110,21 +97,20 @@
 /* Promo-5 Styles */
 
 .promo-five-container {
-  background-image: url(../../assets/iphonetradein.jpg);
-  height: 580px;
+  background-image: url(../../assets/promos/iphonetradein.jpg);
 }
 
 .promo-five-content h3 {
-  background-image: url(../../assets/appletradeinlogo.png);
+  background-image: url(../../assets/logos/apple-trade-in-logo-large-2x.png);
   height: 32px;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   margin-bottom: 10px;
 }
 
 .promo-five-content p {
-  max-width: 315px;
-  letter-spacing: 0.016em;
+  max-width: 320px;
 }
 
 .promo-five-links a:first-child {
@@ -134,19 +120,141 @@
 /* Promo-6 Styles */
 
 .promo-six-container {
-  background-image: url(../../assets/applecard.jpg);
-  height: 580px;
+  background-image: url(../../assets/promos/applecard.jpg);
 }
 
 .promo-six-content h3 {
-  background-image: url(../../assets/applecardlogo.png);
+  background-image: url(../../assets/logos/apple-card-logo-large-2x.png);
   height: 33px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 10px;
 }
 
 .promo-six-content p {
-  max-width: 315px;
-  letter-spacing: 0.016em;
+  max-width: 300px;
+}
+
+/* Promo Card Queries */
+
+@media screen and (max-width: 1070px) {
+  .promo-card-container {
+    height: 490px;
+  }
+
+  .promo-card-content-container h3 {
+    font-size: 32px;
+  }
+
+  .promo-card-content-container p {
+    font-size: 19px;
+  }
+
+  .promo-card-links-container a {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-card-container {
+    width: 100%;
+    height: 548px;
+  }
+}
+
+/* Promo 1 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-one-container {
+    background-image: url(../../assets/promos/imac-medium-2x.jpg);
+  }
+  .promo-one-content p::after {
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-one-container {
+    background-image: url(../../assets/promos/imac-small-2x.jpg);
+  }
+  .promo-one-content p::after {
+    font-size: 17px;
+  }
+}
+
+/* Promo 2 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-two-container {
+    background-image: url(../../assets/promos/apple-watch-medium-2x.jpg);
+  }
+
+  .promo-two-content h3 {
+    height: 42px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-two-container {
+    background-image: url(../../assets/promos/apple-watch-small-2x.jpg);
+  }
+}
+
+/* Promo 3 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-three-container {
+    background-image: url(../../assets/promos/ipad-medium-2x.jpg);
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-three-container {
+    background-image: url(../../assets/promos/ipad-small-2x.jpg);
+  }
+}
+
+/* Promo 4 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-four-container {
+    background-image: url(../../assets/promos/airpods-pro-medium-2x.jpg);
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-four-container {
+    background-image: url(../../assets/promos/airpods-pro-small-2x.jpg);
+  }
+}
+
+/* Promo 5 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-five-container {
+    background-image: url(../../assets/promos/iphone-trade-in-medium-2x.jpg);
+  }
+
+  .promo-five-content h3 {
+    height: 27px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-five-container {
+    background-image: url(../../assets/promos/iphone-trade-in-small-2x.jpg);
+  }
+}
+
+/* Promo 6 Queries */
+@media screen and (max-width: 1070px) {
+  .promo-six-container {
+    background-image: url(../../assets/promos/apple-card-medium-2x.jpg);
+  }
+
+  .promo-six-content h3 {
+    height: 27px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .promo-six-container {
+    background-image: url(../../assets/promos/apple-card-small-2x.jpg);
+  }
 }

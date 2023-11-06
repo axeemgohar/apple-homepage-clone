@@ -1,90 +1,122 @@
+import { useState, useEffect } from "react";
 import "./footer.styles.css";
 
+const shopAndLearnLinks = [
+  "Store",
+  "Mac",
+  "iPad",
+  "iPhone",
+  "Watch",
+  "Vision",
+  "Airpods",
+  "TV & Home",
+  "AirTag",
+  "Accessories",
+  "Gift Cards",
+];
+
+const appleWalletLinks = ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"];
+
+const accountLinks = [
+  "Manage Your Apple ID",
+  "Apple Store Account",
+  "iCould.com",
+];
+
+const entertainmentLinks = [
+  "Apple 1",
+  "Apple TV+",
+  "Apple Music",
+  "Apple Arcade",
+  "Apple Fitness+",
+  "Apple News+",
+  "Apple Podcasts",
+  "Apple Books",
+  "App Store",
+];
+const appleStoreLinks = [
+  "Find a Store",
+  "Genius Bar",
+  "Today at Apple",
+  "Apple Clamp",
+  "Apple Store App",
+  "Certified Refurbished",
+  "Apple Trade In",
+  "Financing",
+  "Carrier Deals at Apple",
+  "Order Status",
+  "Shopping Help",
+];
+
+const forBusinessLinks = ["Apple and Business", "Shop for Business"];
+
+const forEducationLinks = [
+  "Apple and Education",
+  "Shop for K-12",
+  "Shop for College",
+];
+
+const forHealthCareLinks = [
+  "Apple in HealthCare",
+  "Health on Apple Watch",
+  "Health Records on iPhone",
+];
+
+const forGovermentLinks = [
+  "Shop for Government",
+  "Shop for Veterans and Military",
+];
+
+const appleValues = [
+  "Accessibility",
+  "Education",
+  "Environment",
+  "Inclusion and Diversity",
+  "Privacy",
+  "Racial Equity and Justice",
+  "Supplier Responsibility",
+];
+const aboutAppleLinks = [
+  "Newsroom",
+  "Apple Leadership",
+  "Career Opportunities",
+  "Investors",
+  "Ethics & Compliance",
+  "Events",
+  "Contact Apple",
+];
+
 const Footer = () => {
-  const shopAndLearnLinks = [
-    "Store",
-    "Mac",
-    "iPad",
-    "iPhone",
-    "Watch",
-    "Vision",
-    "Airpods",
-    "TV & Home",
-    "AirTag",
-    "Accessories",
-    "Gift Cards",
-  ];
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [open, setOpen] = useState({
+    accord1: false,
+    accord2: false,
+    accord3: false,
+    accord4: false,
+    accord5: false,
+    accord6: false,
+    accord7: false,
+    accord8: false,
+    accord9: false,
+    accord10: false,
+    accord11: false,
+  });
 
-  const appleWalletLinks = ["Wallet", "Apple Card", "Apple Pay", "Apple Cash"];
+  const openAccordionHandler = (index) => {
+    setOpen({ ...open, [`accord${index}`]: !open[`accord${index}`] });
+  };
 
-  const accountLinks = [
-    "Manage Your Apple ID",
-    "Apple Store Account",
-    "iCould.com",
-  ];
+  useEffect(() => {
+    const getWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", getWidth);
 
-  const entertainmentLinks = [
-    "Apple 1",
-    "Apple TV+",
-    "Apple Music",
-    "Apple Arcade",
-    "Apple Fitness+",
-    "Apple News+",
-    "Apple Podcasts",
-    "Apple Books",
-    "App Store",
-  ];
-  const appleStoreLinks = [
-    "Find a Store",
-    "Genius Bar",
-    "Today at Apple",
-    "Apple Clamp",
-    "Apple Store App",
-    "Certified Refurbished",
-    "Apple Trade In",
-    "Financing",
-    "Carrier Deals at Apple",
-    "Order Status",
-    "Shopping Help",
-  ];
+    return () => {
+      window.removeEventListener("resize", getWidth);
+    };
+  }, [windowWidth, open]);
 
-  const forBusinessLinks = ["Apple and Business", "Shop for Business"];
-
-  const forEducationLinks = [
-    "Apple and Education",
-    "Shop for K-12",
-    "Shop for College",
-  ];
-
-  const forHealthCareLinks = [
-    "Apple in HealthCare",
-    "Health on Apple Watch",
-    "Health Records on iPhone",
-  ];
-
-  const forGovermentLinks = [
-    "Shop for Government",
-    "Shop for Veterans and Military",
-  ];
-
-  const appleValues = [
-    "Accessibility",
-    "Education",
-    "Environment",
-    "Inclusion and Diversity",
-    "Privacy",
-    "Racial Equity and Justice",
-    "Supplier Responsibility",
-  ];
-  const aboutAppleLinks = [
-    "Newsroom",
-    "Apple Leadership",
-    "Career Opportunities",
-    "Investors",
-    "Ethics & Compliance",
-    "Events",
-    "Contact Apple",
-  ];
   return (
     <footer>
       <div className="footer-container">
@@ -140,84 +172,258 @@ const Footer = () => {
           <p>A subscription is required for Apple TV+.</p>
         </section>
         <section className="footer-nav-container">
-          <nav className="footer-nav-links">
-            <div className="footer-nav-column">
-              <div className="footer-nav-items">
-                <h4>Shop and Learn</h4>
-                {shopAndLearnLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+          {windowWidth > 840 ? (
+            <nav className="footer-nav-links">
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <h4>Shop and Learn</h4>
+
+                  <div>
+                    {shopAndLearnLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>Apple Wallet</h4>
+                  <div>
+                    {appleWalletLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>Apple Wallet</h4>
-                {appleWalletLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <h4>Account</h4>
+                  <div>
+                    {accountLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>Entertainment</h4>
+                  <div>
+                    {entertainmentLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="footer-nav-column">
-              <div className="footer-nav-items">
-                <h4>Account</h4>
-                {accountLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <h4>Apple Store</h4>
+                  <div>
+                    {appleStoreLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>Entertainment</h4>
-                {entertainmentLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <h4>For Business</h4>
+                  <div>
+                    {forBusinessLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>For Education</h4>
+                  <div>
+                    {forEducationLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>For Healthcare</h4>
+                  <div>
+                    {forHealthCareLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>For Government</h4>
+                  <div>
+                    {forGovermentLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="footer-nav-column">
-              <div className="footer-nav-items">
-                <h4>Apple Store</h4>
-                {appleStoreLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <h4>Apple Values</h4>
+                  <div>
+                    {appleValues.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
+                <div className="footer-nav-items">
+                  <h4>About Apple</h4>
+                  <div>
+                    {aboutAppleLinks.map((link) => {
+                      return <a href="/">{link}</a>;
+                    })}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="footer-nav-column">
-              <div className="footer-nav-items">
-                <h4>For Business</h4>
-                {forBusinessLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+            </nav>
+          ) : (
+            <nav className="footer-nav-links">
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(1)}>
+                    Shop and Learn
+                  </button>
+                  {open.accord1 && (
+                    <div>
+                      {shopAndLearnLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(2)}>
+                    Apple Wallet
+                  </button>
+                  {open.accord2 && (
+                    <div>
+                      {appleWalletLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>For Education</h4>
-                {forEducationLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(3)}>
+                    Account
+                  </button>
+                  {open.accord3 && (
+                    <div>
+                      {accountLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(4)}>
+                    Entertainment
+                  </button>
+                  {open.accord4 && (
+                    <div>
+                      {entertainmentLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>For Healthcare</h4>
-                {forHealthCareLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(5)}>
+                    Apple Store
+                  </button>
+                  {open.accord5 && (
+                    <div>
+                      {appleStoreLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>For Government</h4>
-                {forGovermentLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(6)}>
+                    For Business
+                  </button>
+                  {open.accord6 && (
+                    <div>
+                      {forBusinessLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button
+                    onClick={() => {
+                      openAccordionHandler(7);
+                    }}
+                  >
+                    For Education
+                  </button>
+                  {open.accord7 && (
+                    <div>
+                      {forEducationLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(8)}>
+                    For Healthcare
+                  </button>
+                  {open.accord8 && (
+                    <div>
+                      {forHealthCareLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(9)}>
+                    For Government
+                  </button>
+                  {open.accord9 && (
+                    <div>
+                      {forGovermentLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className="footer-nav-column">
-              <div className="footer-nav-items">
-                <h4>Apple Values</h4>
-                {appleValues.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
+              <div className="footer-nav-column">
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(10)}>
+                    Apple Values
+                  </button>
+                  {open.accord10 && (
+                    <div>
+                      {appleValues.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
+                <div className="footer-nav-items">
+                  <button onClick={() => openAccordionHandler(11)}>
+                    About Apple
+                  </button>
+                  {open.accord11 && (
+                    <div>
+                      {aboutAppleLinks.map((link) => {
+                        return <a href="/">{link}</a>;
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-              <div className="footer-nav-items">
-                <h4>About Apple</h4>
-                {aboutAppleLinks.map((link) => {
-                  return <a href="/">{link}</a>;
-                })}
-              </div>
-            </div>
-          </nav>
+            </nav>
+          )}
           <p className="waysToShop">
             More ways to shop: <a href="/">Find an Apple Store</a> or{" "}
             <a href="/">other retailer</a> near you. Or call 1-800-MY-APPLE.

@@ -26,31 +26,30 @@ const App = () => {
         container="section-three-container"
         content="section-three-content"
         links="section-three-links"
-        heading=""
-        description="Smarter. Brighter. Mightier"
+        heading="MacBook Pro"
+        description="Mind-blowing. Head-turning."
       />
       <div className="promos-flex-container">
         <PromoCard
           container="promo-one-container"
           content="promo-one-content"
           links="promo-one-links"
-          heading="iPad"
-          description="Lovable. Drawable. Magical"
+          heading="iMac"
+          description="Packed with more juice."
         />
-
         <PromoCard
           container="promo-two-container"
           content="promo-two-content"
           links="promo-two-links"
           heading=""
-          description="Welcome to the era of spatial computing."
+          description="Smarter. Brighter. Mightier."
         />
         <PromoCard
           container="promo-three-container"
           content="promo-three-content"
           links="promo-three-links"
-          heading={`MacBook Air 15"`}
-          description="Impressively big. Impossibly thin."
+          heading="iPad"
+          description="Lovable. Drawable. Magical"
         />
         <PromoCard
           container="promo-four-container"
