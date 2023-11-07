@@ -1,8 +1,8 @@
+import "./app.css";
 import { Fragment } from "react";
 import Nav from "./components/nav/Nav.component";
 import Card from "./components/card/Card.component";
 import PromoCard from "./components/promocard/PromoCard.component";
-import "./app.css";
 import Footer from "./components/footer/Footer.component";
 const App = () => {
   return (
