@@ -3,7 +3,7 @@ import Nav from "./components/nav/Nav.component";
 import Card from "./components/card/Card.component";
 import PromoCard from "./components/promocard/PromoCard.component";
 import Footer from "./components/footer/Footer.component";
-import "./app.css";
+import "./App.css";
 const App = () => {
   return (
     <Fragment>
